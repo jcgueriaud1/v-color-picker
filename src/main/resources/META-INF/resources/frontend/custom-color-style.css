@@ -1,0 +1,39 @@
+.color-picker .preset-color {
+    height: 50px;
+    width: 50px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.color-picker .selected {
+    box-shadow: 0 0 7px 3px var(--lumo-primary-color);
+    border: 2px solid var(--lumo-primary-color);
+}
+
+paper-slider.red {
+    --paper-slider-knob-color: #f44336;
+    --paper-slider-active-color: #f44336;
+}
+paper-slider.green {
+    --paper-slider-knob-color: #36f443;
+    --paper-slider-active-color: #36f443;
+}
+paper-slider.blue {
+    --paper-slider-knob-color: #3643ff;
+    --paper-slider-active-color: #3643ff;
+}
+
+paper-slider {
+    --paper-input-container-shared-input-style_-_font-size: 12px;
+}
+
+.color-picker .preview {
+    height: 150px;
+    width: 250px;
+}
+
+.color-picker .color-preview {
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+}
