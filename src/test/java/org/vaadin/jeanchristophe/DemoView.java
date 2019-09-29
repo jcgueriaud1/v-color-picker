@@ -19,7 +19,7 @@ public class DemoView extends VerticalLayout {
 
         // You can also use getTranslation
         ColorPicker colorPickerCustomLabel = new ColorPicker("Change label");
-        colorPickerCustomLabel.setColorI18n(new CustomColorI18n());
+        colorPickerCustomLabel.setColorPickerI18N(new CustomColorPickerI18N());
         add(colorPickerCustomLabel);
 
         ColorPicker colorPickerNoCustomValue = new ColorPicker("No Custom Value");
@@ -27,7 +27,7 @@ public class DemoView extends VerticalLayout {
         add(colorPickerNoCustomValue);
     }
 
-    public static class CustomColorI18n extends ColorI18n {
+    public static class CustomColorPickerI18N extends ColorPickerI18n {
 
         @Override
         public String getBlueLabel() {

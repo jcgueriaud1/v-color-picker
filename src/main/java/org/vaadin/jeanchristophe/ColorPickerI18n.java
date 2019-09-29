@@ -1,7 +1,9 @@
 package org.vaadin.jeanchristophe;
 
-
-public class ColorI18n {
+/**
+ * Messages for Color picker
+ */
+public class ColorPickerI18n {
 
     public String getRedLabel() {
         return "R";

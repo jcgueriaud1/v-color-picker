@@ -28,7 +28,7 @@ import java.util.Map;
 @CssImport("./custom-color-style.css")
 public class ColorPicker extends CustomField<String> {
 
-    private ColorI18n colorI18n = new ColorI18n();
+    private ColorPickerI18n colorPickerI18N = new ColorPickerI18n();
     private HorizontalLayout layout = new HorizontalLayout();
     private ComboBox<String> colorField;
     private Button openAdvancedButton;
@@ -85,14 +85,14 @@ public class ColorPicker extends CustomField<String> {
 
     private void openAdvancedDialog() {
         final Dialog dialog = createDialog();
-        okButton = new Button(colorI18n.getOkText());
+        okButton = new Button(colorPickerI18N.getOkText());
         okButton.setThemeName(ButtonVariant.LUMO_PRIMARY.getVariantName());
         // save the dialog value
         okButton.addClickListener(e -> {
             colorField.setValue(internalColor);
             dialog.close();
         });
-        cancelButton = new Button(colorI18n.getCancelText());
+        cancelButton = new Button(colorPickerI18N.getCancelText());
         VerticalLayout layout = new VerticalLayout();
         layout.setSpacing(false);
         layout.setPadding(false);
@@ -102,14 +102,14 @@ public class ColorPicker extends CustomField<String> {
 
 
         if (getPresetColors() != null && !getPresetColors().isEmpty()) {
-            Details detailsPreset = new Details(colorI18n.getPresetTitle(),
+            Details detailsPreset = new Details(colorPickerI18N.getPresetTitle(),
                     createPresetLayout());
             detailsPreset.setOpened(true);
             layout.add(detailsPreset);
         }
 
         if (isAllowCustomValue()) {
-            Details detailsAdvanced = new Details(colorI18n.getAdvancedTitle(),
+            Details detailsAdvanced = new Details(colorPickerI18N.getAdvancedTitle(),
                     createAdvancedLayout());
             detailsAdvanced.setOpened(true);
             layout.add(detailsAdvanced);
@@ -146,7 +146,7 @@ public class ColorPicker extends CustomField<String> {
             VerticalLayout colorsLayout = new VerticalLayout();
             colorsLayout.setPadding(false);
             colorsLayout.setSpacing(false);
-            Label redPaperSliderLabel = new Label(colorI18n.getRedLabel());
+            Label redPaperSliderLabel = new Label(colorPickerI18N.getRedLabel());
             redPaperSlider.setId("red-color");
             redPaperSliderLabel.setFor(redPaperSlider);
             redPaperSlider.addValueChangeListener(this::paperSliderChanged);
@@ -156,7 +156,7 @@ public class ColorPicker extends CustomField<String> {
             redLayout.setAlignItems(FlexComponent.Alignment.CENTER);
             colorsLayout.add(redLayout);
 
-            Label greenPaperSliderLabel = new Label(colorI18n.getGreenLabel());
+            Label greenPaperSliderLabel = new Label(colorPickerI18N.getGreenLabel());
             greenPaperSlider.setId("green-color");
             greenPaperSliderLabel.setFor(greenPaperSlider);
             greenPaperSlider.addClassName("green");
@@ -167,7 +167,7 @@ public class ColorPicker extends CustomField<String> {
             greenLayout.setAlignItems(FlexComponent.Alignment.CENTER);
             colorsLayout.add(greenLayout);
 
-            Label bluePaperSliderLabel = new Label(colorI18n.getBlueLabel());
+            Label bluePaperSliderLabel = new Label(colorPickerI18N.getBlueLabel());
             greenPaperSlider.setId("blue-color");
             greenPaperSliderLabel.setFor(greenPaperSlider);
             bluePaperSlider.addClassName("blue");
@@ -189,8 +189,6 @@ public class ColorPicker extends CustomField<String> {
         String hex = String.format("#%02x%02x%02x", r, g, b);
         setInternalColor(hex, false);
     }
-
-
 
     private void setInternalColor(String color, boolean isFromCustom) {
         internalColor = color;
@@ -271,10 +269,10 @@ public class ColorPicker extends CustomField<String> {
 
     /**
      *
-     * @param colorI18n translation for Color Picker
+     * @param colorPickerI18N translation for Color Picker
      */
-    public void setColorI18n(ColorI18n colorI18n) {
-        this.colorI18n = colorI18n;
+    public void setColorPickerI18N(ColorPickerI18n colorPickerI18N) {
+        this.colorPickerI18N = colorPickerI18N;
     }
 }
 
